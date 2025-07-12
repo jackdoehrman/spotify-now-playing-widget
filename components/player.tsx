@@ -20,7 +20,7 @@ const Player = ({
   isPlaying,
 }: Props) => {
   return (
-    <ReadmeImg width={750} height={180}>
+    <ReadmeImg width={900} height={250}>
       <style>
         {`
             .paused { 
@@ -128,7 +128,7 @@ const Player = ({
           paddingLeft: 4,
         }}
       >
-        <img id="cover" src={cover} width="350" height="350" />
+        <img id="cover" src={cover} width="500" height="500" />
         <div
           style={{
             display: "flex",
@@ -138,10 +138,10 @@ const Player = ({
             marginLeft: 8,
           }}
         >
-          <Text id="track" weight="bold">
+          <Text id="track" weight="bold" color="#ffffff">
             {`${track ?? ""} `.trim()}
           </Text>
-          <Text id="artist" color={!track ? "gray" : undefined}>
+          <Text id="artist" color={"#ffffff"}>
             {artist || "Nothing playing..."}
           </Text>
           {track && (
