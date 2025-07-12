@@ -128,7 +128,7 @@ const Player = ({
           paddingLeft: 4,
         }}
       >
-        <img id="cover" src={cover} width="720" height="720" />
+        <img id="cover" src={cover} width="120" height="120" />
         <div
           style={{
             display: "flex",
