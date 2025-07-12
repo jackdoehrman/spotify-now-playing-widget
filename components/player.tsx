@@ -20,7 +20,7 @@ const Player = ({
   isPlaying,
 }: Props) => {
   return (
-    <ReadmeImg width={256} height={64}>
+    <ReadmeImg width={750} height={180}>
       <style>
         {`
             .paused { 
@@ -128,7 +128,7 @@ const Player = ({
           paddingLeft: 4,
         }}
       >
-        <img id="cover" src={cover} width="48" height="48" />
+        <img id="cover" src={cover} width="150" height="150" />
         <div
           style={{
             display: "flex",
