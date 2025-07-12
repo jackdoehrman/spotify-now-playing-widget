@@ -36,7 +36,7 @@ const Player = ({
             .progress-bar {
               position: relative;
               width: 100%;
-              height: 4px;
+              height: 12px;
               margin: -1px;
               border: 1px solid #e1e4e8;
               border-radius: 4px;
@@ -50,7 +50,7 @@ const Player = ({
               top: -1px;
               left: 0;
               width: 100%;
-              height: 6px;
+              height: 18px;
               transform-origin: left center;
               background-color: #ffffff;
               animation: progress ${duration}ms linear;
