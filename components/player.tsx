@@ -20,7 +20,7 @@ const Player = ({
   isPlaying,
 }: Props) => {
   return (
-    <ReadmeImg width={256} height={64}>
+    <ReadmeImg width={750} height={180}>
       <style>
         {`
             .paused { 
