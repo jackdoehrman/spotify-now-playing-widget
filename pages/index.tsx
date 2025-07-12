@@ -8,9 +8,9 @@ export default function Home() {
     <main
       className={`${inter.className}`}
       style={{
-        padding: "1rem",
-        height: "100vh",
-        width: "100vw",
+        padding: "5rem",
+        height: "350vh",
+        width: "350vw",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
