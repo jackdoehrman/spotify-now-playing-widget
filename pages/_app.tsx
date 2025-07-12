@@ -9,7 +9,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <title>Spotify now playing widget</title>
         <meta
           name="description"
-          content="Spotify now playing badge - Manjil Tamang"
+          content="Spotify now playing badge - Jack Doehrman"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
