@@ -36,23 +36,23 @@ const Player = ({
             .progress-bar {
               position: relative;
               width: 100%;
-              height: 4px;
-              margin: -1px;
-              border: 1px solid #e1e4e8;
-              border-radius: 4px;
+              height: 14px;
+              margin: -3.5px;
+              border: 3.5px solid #e1e4e8;
+              border-radius: 14px;
               overflow: hidden;
-              padding: 2px;
+              padding: 7px;
               z-index: 0;
             }
 
             #progress {
               position: absolute;
-              top: -1px;
+              top: -3.5px;
               left: 0;
               width: 100%;
-              height: 6px;
+              height: 21px;
               transform-origin: left center;
-              background-color: #24292e;
+              background-color: #ffffff;
               animation: progress ${duration}ms linear;
               animation-delay: -${progress}ms;
             }
@@ -73,14 +73,14 @@ const Player = ({
             }
             .progress-bar {
               animation-delay: 550ms;
-              margin-top: 4px;
+              margin-top: 14px;
             }
 
             #cover {
-              border-radius: 6px;
+              border-radius: 21px;
               animation-name: cover-appear;
               animation-delay: 300ms;
-              box-shadow: 0 1px 3px rgba(0,0,0,0.1), 0 3px 10px rgba(0,0,0,0.05);
+              box-shadow: 0 3.5px 10.5px rgba(0,0,0,0.1), 0 10.5px 35px rgba(0,0,0,0.05);
             }
 
             #cover:not([src]) {
@@ -101,7 +101,7 @@ const Player = ({
             @keyframes appear {
               from {
                 opacity: 0;
-                transform: translateX(-8px);
+                transform: translateX(-28px);
               }
               to {
                 opacity: 1;
@@ -128,7 +128,7 @@ const Player = ({
           paddingLeft: 4,
         }}
       >
-        <img id="cover" src={cover} width="48" height="48" />
+        <img id="cover" src={cover} width="350" height="350" />
         <div
           style={{
             display: "flex",
