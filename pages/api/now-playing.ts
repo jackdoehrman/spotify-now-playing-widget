@@ -34,9 +34,7 @@ export default async function handler(
   const { duration_ms: duration, name: track } = item;
   const { images = [] } = item.album || {};
 
-const cover =
-  images[images.length - 1]?.url ||
-  "/assets/default-artwork.jpg";
+const cover = "/assets/default-artwork.jpg";
 
   const buff = await (await fetch(cover)).arrayBuffer();
   let coverImg = `data:image/jpeg;base64,${Buffer.from(buff).toString(
