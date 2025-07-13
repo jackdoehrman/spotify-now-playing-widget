@@ -9,7 +9,6 @@ export interface Props {
   progress: number;
   duration?: number;
   isPlaying: boolean;
-  topSongs?: { track: string; artist: string }[];
 }
 
 const Player = ({
@@ -19,7 +18,6 @@ const Player = ({
   progress,
   duration,
   isPlaying,
-  topSongs = [],
 }: Props) => {
   return (
     <ReadmeImg width={750} height={180}>
@@ -54,6 +52,7 @@ const Player = ({
               width: 100%;
               height: 18px;
               transform-origin: left center;
+              background-color: #ffffff;
               animation: progress ${duration}ms linear;
               animation-delay: -${progress}ms;
             }
@@ -142,22 +141,9 @@ const Player = ({
           <Text id="track" weight="bold">
             {`${track ?? ""} `.trim()}
           </Text>
-          {track ? (
-            <Text id="artist">{artist}</Text>
-          ) : topSongs && topSongs.length > 0 ? (
-            <div>
-              <Text id="artist" color="gray">Top Songs:</Text>
-              <ul style={{ marginTop: 4, paddingLeft: 12 }}>
-                {topSongs.slice(0, 3).map((song, i) => (
-                  <li key={i} style={{ color: "gray", fontSize: 14 }}>
-                    {song.track} — {song.artist}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : (
-            <Text id="artist" color="gray">Nothing playing...</Text>
-          )}
+          <Text id="artist" color={!track ? "gray" : undefined}>
+            {artist || "Nothing playing..."}
+          </Text>
           {track && (
             <div className="progress-bar">
               <div id="progress" className={!isPlaying ? "paused" : ""} />
