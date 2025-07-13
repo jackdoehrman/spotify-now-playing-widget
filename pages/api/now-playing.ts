@@ -17,6 +17,10 @@ type SpotifyAPI = {
   progress_ms: number;
 };
 
+export default async function handler(req, res) {
+  const data = await nowPlaying();
+  let topSongs = [];
+
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
