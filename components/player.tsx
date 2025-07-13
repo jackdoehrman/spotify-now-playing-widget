@@ -9,6 +9,7 @@ export interface Props {
   progress: number;
   duration?: number;
   isPlaying: boolean;
+  topSongs?: { track: string; artist: string }[];
 }
 
 const Player = ({
