@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import Player from "../../components/player";
-import { nowPlaying } from "../../utils";
+import { nowPlaying, getTopSongs } from "../../utils";
 import { renderToString } from "react-dom/server";
 
 type SpotifyAPI = {
@@ -41,8 +41,14 @@ export default async function handler(
 
   const artist = (item.artists || []).map(({ name }) => name).join(", ");
 
+  // Fetch top songs if nothing is playing
+  let topSongs: { track: string; artist: string }[] = [];
+  if (!isPlaying) {
+    topSongs = await getTopSongs(); // Make sure this function exists and returns the correct format
+  }
+
   const text = renderToString(
-    Player({ cover: coverImg, artist, track, isPlaying, progress, duration. topSongs })
+    Player({ cover: coverImg, artist, track, isPlaying, progress, duration, topSongs })
   );
 
   res.setHeader("Content-Type", "image/svg+xml");
