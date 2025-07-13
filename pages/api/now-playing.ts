@@ -1,6 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import Player from "../../components/player";
-import { nowPlaying, getTopSongs } from "../../utils";
+import { nowPlaying } from "../../utils";
 import { renderToString } from "react-dom/server";
 
 type SpotifyAPI = {
@@ -44,13 +44,7 @@ const cover =
   )}`;
 
   const artist = (item.artists || []).map(({ name }) => name).join(", ");
-
-  // Fetch top songs if nothing is playing
-  let topSongs: { track: string; artist: string }[] = [];
-  if (!isPlaying) {
-    topSongs = await getTopSongs(); // Make sure this function exists and returns the correct format
-  }
-
+  
   const text = renderToString(
     Player({ cover: coverImg, artist, track, isPlaying, progress, duration })
   );
@@ -59,5 +53,3 @@ const cover =
   res.setHeader("Cache-Control", "s-maxage=1, stale-while-revalidate");
   return res.status(200).send(text);
 }
-
-const topSongs = await getTopSongs(accessToken);
