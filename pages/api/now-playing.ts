@@ -42,7 +42,7 @@ export default async function handler(
   const artist = (item.artists || []).map(({ name }) => name).join(", ");
 
   const text = renderToString(
-    Player({ cover: coverImg, artist, track, isPlaying, progress, duration })
+    Player({ cover: coverImg, artist, track, isPlaying, progress, duration. topSongs })
   );
 
   res.setHeader("Content-Type", "image/svg+xml");
