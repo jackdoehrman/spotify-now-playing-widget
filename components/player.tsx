@@ -19,6 +19,7 @@ const Player = ({
   progress,
   duration,
   isPlaying,
+  topSongs = [],
 }: Props) => {
   return (
     <ReadmeImg width={750} height={180}>
@@ -143,23 +144,23 @@ const Player = ({
             {`${track ?? ""} `.trim()}
           </Text>
           {track ? (
-          <Text id="artist" color={undefined}>
-            {artist}
-          </Text>
-        ) : topSongs && topSongs.length > 0 ? (
-          <div>
-            <Text id="artist" color="gray">Top Songs:</Text>
-            <ul style={{marginTop: 4, paddingLeft: 12}}>
-              {topSongs.slice(0, 3).map((song, i) => (
-                <li key={i} style={{color: "#ffffff", fontSize: 14}}>
-                  {song.track} — {song.artist}
-                </li>
-              ))}
-            </ul>
-          </div>
-        ) : (
-          <Text id="artist" color="gray">Nothing playing...</Text>
-        )}
+            <Text id="artist" color={undefined}>
+              {artist}
+            </Text>
+          ) : topSongs && topSongs.length > 0 ? (
+            <div>
+              <Text id="artist" color="gray">Top Songs:</Text>
+              <ul style={{marginTop: 4, paddingLeft: 12}}>
+                {topSongs.slice(0, 3).map((song, i) => (
+                  <li key={i} style={{color: "#ffffff", fontSize: 14}}>
+                    {song.track} — {song.artist}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ) : (
+            <Text id="artist" color="gray">Nothing playing...</Text>
+          )}
           {track && (
             <div className="progress-bar">
               <div id="progress" className={!isPlaying ? "paused" : ""} />
