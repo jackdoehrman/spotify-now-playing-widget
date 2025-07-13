@@ -144,15 +144,13 @@ const Player = ({
             {`${track ?? ""} `.trim()}
           </Text>
           {track ? (
-            <Text id="artist" color={undefined}>
-              {artist}
-            </Text>
+            <Text id="artist">{artist}</Text>
           ) : topSongs && topSongs.length > 0 ? (
             <div>
               <Text id="artist" color="gray">Top Songs:</Text>
-              <ul style={{marginTop: 4, paddingLeft: 12}}>
+              <ul style={{ marginTop: 4, paddingLeft: 12 }}>
                 {topSongs.slice(0, 3).map((song, i) => (
-                  <li key={i} style={{color: "#ffffff", fontSize: 14}}>
+                  <li key={i} style={{ color: "#ffffff", fontSize: 14 }}>
                     {song.track} — {song.artist}
                   </li>
                 ))}
