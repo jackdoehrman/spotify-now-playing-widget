@@ -59,3 +59,7 @@ export default async function handler(
   res.setHeader("Cache-Control", "s-maxage=1, stale-while-revalidate");
   return res.status(200).send(text);
 }
+
+    if (!data?.is_playing) {
+    topSongs = await getTopSongs(accessToken);
+  }
