@@ -52,7 +52,7 @@ const cover =
   }
 
   const text = renderToString(
-    Player({ cover: coverImg, artist, track, isPlaying, progress, duration, topSongs })
+    Player({ cover: coverImg, artist, track, isPlaying, progress, duration })
   );
 
   res.setHeader("Content-Type", "image/svg+xml");
@@ -60,6 +60,4 @@ const cover =
   return res.status(200).send(text);
 }
 
-    if (!data?.is_playing) {
-    topSongs = await getTopSongs(accessToken);
-  }
+const topSongs = await getTopSongs(accessToken);
